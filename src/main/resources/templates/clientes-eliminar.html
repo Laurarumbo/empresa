@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Eliminar Cliente</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+    <h1>¿Deseas eliminar este cliente?</h1>
+    <p><strong th:text="${cliente.nombre}"></strong></p>
+    <form th:action="@{/clientes/eliminar-confirmado/{id}(id=${cliente.id})}" method="post">
+        <button type="submit" style="background-color: #dc3545;">Sí, eliminar</button>
+        <a href="/clientes" class="button" style="background-color: gray;">Cancelar</a>
+    </form>
+</body>
+</html>
+
+

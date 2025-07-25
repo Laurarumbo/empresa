@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Panel de Gestión</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+    <style>
+        .contenedor {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .contenedor h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .botones a.button {
+            padding: 20px 40px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Bienvenido al Panel de Gestión</h1>
+        <div class="botones">
+            <a href="/empresas" class="button">Gestión de Empresas</a>
+            <a href="/clientes" class="button">Gestión de Clientes</a>
+        </div>
+    </div>
+</body>
+</html>
+

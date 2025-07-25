@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${empresa.id} != null ? 'Editar Empresa' : 'Nueva Empresa'"></title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+    <h1 th:text="${empresa.id} != null ? 'Editar Empresa' : 'Nueva Empresa'"></h1>
+    <form th:action="@{/empresas/guardar}" th:object="${empresa}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <label>Nombre:</label>
+        <input type="text" th:field="*{nombre}" required />
+
+        <label>Dirección:</label>
+        <input type="text" th:field="*{direccion}" required />
+
+        <label>Teléfono:</label>
+        <input type="text" th:field="*{telefono}" required />
+
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" required />
+
+        <button type="submit">Guardar</button>
+        <a href="/empresas" class="button" style="background-color: gray;">Cancelar</a>
+    </form>
+</body>
+</html>
+
+
