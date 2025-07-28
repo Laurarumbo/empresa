@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Artículos</title>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+    <h1>Lista de Artículos</h1>
+    <a href="/articulos/nuevo"><button>+ Nuevo Artículo</button></a>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="art : ${articulos}">
+                <td th:text="${art.nombre}">Nombre</td>
+                <td th:text="${art.descripcion}">Descripción</td>
+                <td th:text="${art.precio}">0.0</td>
+                <td>
+                    <a th:href="@{'/articulos/editar/' + ${art.id}}">Editar</a> |
+                    <a th:href="@{'/articulos/eliminar/' + ${art.id}}">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="/"><button>Volver al inicio</button></a>
+</body>
+</html>
